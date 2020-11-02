@@ -4,11 +4,13 @@
 Created on Sun Nov  1 11:33:06 2020
 
 @author: dinesh
+
 """
 
 # Importing required libraries
 import numpy as np
 import pandas as pd
+import os
 
 # For reading stock data from yahoo
 import pandas_datareader.data as pdr
@@ -16,10 +18,9 @@ import pandas_datareader.data as pdr
 # For time stamps
 from datetime import datetime
 
-
 # Supressing the warning messages
-import warnings
-warnings.filterwarnings('ignore')
+#import warnings
+#warnings.filterwarnings('ignore')
 
 
 # Stock Dataset
@@ -66,13 +67,11 @@ def get_stock_data(filename='stock_data.csv',stock = "AMZN", start_date = '2020-
 
     return stock_data
 
-# Print docstrings of method 
-print(get_stock_data.__doc__)
-
-
 # collect data for Amazon from 2020-02-01 to 2020-03-31
 stock_data = get_stock_data(filename='stock_data.csv',stock = "AMZN", 
                             start_date = '2020-02-01',end_date = '2020-03-31',force_download=True)
 
-# Looking at sample rows in the data
-stock_data.head()
+
+
+
+
