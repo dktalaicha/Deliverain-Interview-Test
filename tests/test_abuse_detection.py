@@ -20,7 +20,6 @@ def test_stock_columns(stock_df):
         {'Date','High', 'Low', 'Open', 'Close', 'Volume', 'Adj Close'},
     )
 
-    
 def test_stock_data_types(stock_df):
     dt.validate(stock_df['Date'], datetime)
     dt.validate(stock_df['High'], float)
@@ -45,7 +44,6 @@ def test_traders_columns(traders_df):
 
 """Check that values are of the given type. """ 
 def test_traders_data_types(traders_df):
-    #dt.validate(traders_df['countryCode'], str())
     dt.validate(traders_df['firstName'], str)
     dt.validate(traders_df['lastName'], str)
     dt.validate(traders_df['traderId'], str)
@@ -60,25 +58,7 @@ def test_unique_tradeId(traders_df):
     dt.validate.unique(traders_df['tradeId'])
 
 
-"""
-def test_get_stock_data(stock_data):
-    assert isinstance(stock_data.index, pd.DatetimeIndex)
-    assert all(stock_data.columns == ['Date','High', 'Low', 'Open', 'Close', 'Volume', 'Adj Close'])
-    assert isinstance(stock_data.index, pd.DatetimeIndex)
-    assert len(np.unique(stock_data.index.date)) == 42
-    
-  
-
-def test_stock_data_duplicate():
-    assert stock_data[stock_data.duplicated() == True]
-    
-def test_something_works(stock_data): # snapshot is a pytest fixture from snapshottest
-    stock_data.assert_match(data_frame.to_csv(index=False), 'some_module_level_unique_name_for_the_snapshot')
-    
-
-
-if __name__ == '__main__':
-    test_get_stock_data()
-
-"""
+"""Check that number of rows in traders dataset and final merged datasets are same.""" 
+def test_check_rows_count(traders_df,market_data_label_df):
+    dt.validate(traders_df.shape[0],market_data_label_df.shape[0])
     

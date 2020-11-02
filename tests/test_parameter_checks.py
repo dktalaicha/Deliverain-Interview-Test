@@ -11,7 +11,6 @@ import pytest
 import sys 
 import os
 
-#sys.path.append(os.path.abspath("/home/dinesh/Data-Science/06-Python/deliverain_python_test/tests"))
 sys.path.append(os.path.abspath(''))
 
 from parameter_checks import _define_numerical_dict

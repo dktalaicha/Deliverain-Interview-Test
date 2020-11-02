@@ -12,7 +12,6 @@ import pytest
 import sys 
 import os
 
-#sys.path.append(os.path.abspath("/home/dinesh/Data-Science/06-Python/deliverain_python_test/tests"))
 sys.path.append(os.path.abspath(''))
 
 
@@ -33,8 +32,3 @@ def test_check_input_matches_training_df(stock_df):
     with pytest.raises(ValueError):
         assert _check_input_matches_training_df(stock_df, 4)
 
-"""
-def test_contains_na(stock_df):
-    with pytest.raises(ValueError):
-        assert _check_contains_na(stock_df, ["Date","High"])
-"""

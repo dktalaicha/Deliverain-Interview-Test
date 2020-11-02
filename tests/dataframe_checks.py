@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Nov  2 13:47:08 2020
+Created on Mon Nov  1 13:47:08 2020
 
 @author: dinesh
 """
@@ -65,3 +65,4 @@ def _check_contains_na(X: pd.DataFrame, variables: Union[str, List[str]]):
             "Some of the variables to transform contain missing values. Check and "
             "remove those before using this transformer."
         )
+    return None

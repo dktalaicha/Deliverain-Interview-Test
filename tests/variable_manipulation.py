@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Nov  2 16:34:18 2020
+Created on Mon Nov  1 16:34:18 2020
 
 @author: dinesh
 """
@@ -39,8 +39,7 @@ def _define_variables(
 
 
 def _find_numerical_variables(
-    X: pd.DataFrame, variables: Optional[List[str]] = None
-) -> List[str]:
+    X: pd.DataFrame, variables: Optional[List[str]] = None) -> List[str]:
     """
     Takes Pandas DataFrame and checks if user provided variables
     are numerical type. If no variables are provided by the user,
@@ -62,7 +61,6 @@ def _find_numerical_variables(
                 "No numerical variables in this dataframe. Please check variable"
                 "format with pandas dtypes"
             )
-
     else:
         if any(X[variables].select_dtypes(exclude="number").columns):
             raise TypeError(
@@ -74,8 +72,7 @@ def _find_numerical_variables(
 
 
 def _find_categorical_variables(
-    X: pd.DataFrame, variables: Optional[List[str]] = None
-) -> List[str]:
+    X: pd.DataFrame, variables: Optional[List[str]] = None) -> List[str]:
     """
     Takes Pandas DataFrame and finds all categorical variables if not provided.
     If variables are provided, checks if they are indeed categorical.

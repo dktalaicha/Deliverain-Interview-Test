@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Nov  2 13:15:09 2020
+Created on Mon Nov  1 13:15:09 2020
 
 @author: dinesh
 """
@@ -32,3 +32,7 @@ def stock_df():
 @pytest.fixture(scope='module')
 def traders_df():
     return pd.read_pickle('../TradersDataClean.pkl')
+
+@pytest.fixture(scope='module')
+def market_data_label_df():
+    return pd.read_pickle('../marketDataLabel.pkl')
